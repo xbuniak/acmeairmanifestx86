@@ -1,0 +1,10 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: acmeair-flight-route
+spec:
+  host: acmeair.apps.iccpp.ocpmop.demo
+  path: /flight
+  to:
+    kind: Service
+    name: acmeair-flight-service

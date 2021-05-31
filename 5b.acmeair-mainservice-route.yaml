@@ -1,0 +1,13 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: acmeair-secure-main-route
+spec:
+  host: acmeairsecure.apps.iccpp.ocpmop.demo
+  #  path: /acmeair
+  to:
+    kind: Service
+    name: acmeair-secure-main-service
+  tls:
+    mode: SIMPLE
+    credentialName: custom-certs-acmeair
